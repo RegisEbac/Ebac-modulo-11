@@ -31,6 +31,10 @@ var quantidade= 10
             
 
     });
-
+   
+it('Deve adicionar produtos ao carrinho - usando comando customizados', () => {
+    cy.addprodutos('Arcadio Gym Short', 3)
+    
+});
 
 });

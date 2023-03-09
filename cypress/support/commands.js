@@ -23,3 +23,28 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+const cypress = require("cypress")
+
+Cypress.Commands.add('login', (usuario, senha) => {
+    cy.get('#username').type(usuario)
+    cy.get('#password').type(senha)
+    cy.get('.woocommerce-form > .button').click()
+
+})
+
+cypress.Commands.add('addprodutos', (produto , quantidade) => {
+    cy.get(' .product-block ')
+        .contains(produto).click()
+    cy.get('.button-variable-item-Red').click()
+    cy.get('.button-variable-item-34').click()
+    cy.get('.input-text').clear().type(quantidade)
+    cy.get('.single_add_to_cart_button').click()
+
+
+})
+
+
+
+
+
