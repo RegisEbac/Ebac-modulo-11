@@ -24,7 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-const cypress = require("cypress")
+
 
 Cypress.Commands.add('login', (usuario, senha) => {
     cy.get('#username').type(usuario)
@@ -33,7 +33,7 @@ Cypress.Commands.add('login', (usuario, senha) => {
 
 })
 
-cypress.Commands.add('addprodutos', (produto , quantidade) => {
+Cypress.Commands.add('addprodutos', (produto , quantidade) => {
     cy.get(' .product-block ')
         .contains(produto).click()
     cy.get('.button-variable-item-Red').click()
